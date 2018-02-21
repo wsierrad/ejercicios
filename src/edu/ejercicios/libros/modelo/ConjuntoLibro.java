@@ -17,7 +17,7 @@ public class ConjuntoLibro {
     }
     public boolean creaLibro(String titulo, String autor, int paginas){
         for (int i=0;i<10;i++){
-            if(libros[0]==null){
+            if(libros[i]==null){
                 Libro l1=new Libro(titulo,autor,paginas);
                 return true;
             }
