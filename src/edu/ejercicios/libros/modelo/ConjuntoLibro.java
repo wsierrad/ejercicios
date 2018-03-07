@@ -4,22 +4,35 @@
  * and open the template in the editor.
  */
 package edu.ejercicios.libros.modelo;
-import edu.ejercicios.libros.modelo.Libro;
+import java.util.ArrayList;
 /**
  *
  * @author ESTUDIANTE
  */
 public class ConjuntoLibro {
-    private Libro libros[];
+    private ArrayList<Libro> libros;
     
     public ConjuntoLibro(){
-        libros = new Libro[10];
+        this.libros = new ArrayList<>();
     }
-    public boolean creaLibro(String titulo, String autor, int paginas){
-        for (int i=0;i<10;i++){
-            if(libros[i]==null){
-                Libro l1=new Libro(titulo,autor,paginas);
-                return true;
+    public boolean creaLibro(Libro libro){
+        return this.libros.add(libro);
+    }
+    public ArrayList<Libro> mostraLibros(){
+        return this.libros;
+    }
+    public boolean eliminarxAutor(String nombre){
+        for (Libro libro :this.libros){
+            if (libro.getAutor().equals(nombre)){
+                return libros.remove(libro);
+            }
+        }
+        return false;
+    }
+    public boolean eliminarxTitulo(String titulo){
+        for (Libro libro :this.libros){
+            if (libro.getAutor().equals(titulo)){
+                return libros.remove(libro);
             }
         }
         return false;
